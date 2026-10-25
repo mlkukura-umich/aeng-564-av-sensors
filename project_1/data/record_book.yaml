@@ -1,0 +1,14 @@
+# Dataset config for the records-vs-books fine-tuning task.
+# `path` is intentionally omitted here: Ultralytics resolves a relative path
+# against its own global datasets dir, not this file's location, so an
+# absolute path is required -- train.py/evaluate.py inject one computed from
+# this file's actual location at runtime, so this config works on any machine.
+train: images/train
+val: images/val
+test: images/test
+
+# Class order matches Label Studio's alphabetical YOLO export,
+# which is why "book" is 0, not "record".
+names:
+  0: book
+  1: record
